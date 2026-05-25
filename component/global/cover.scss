@@ -1,0 +1,124 @@
+// ─────────────────────────────────────────
+//  PORTADA
+// ─────────────────────────────────────────
+#cover {
+  min-height: 100vh;
+  background: var(--ink);
+  color: var(--paper);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+
+  // Dot grid de fondo
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+    background-size: 28px 28px;
+    pointer-events: none;
+  }
+}
+
+// Marco elegante
+.frame {
+  position: absolute;
+  inset: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+}
+
+// Eyebrow
+.c-eyebrow {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.45em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  margin-bottom: 3.5rem;
+  position: relative;
+}
+
+// Snoopy animado
+.snoopy-hero {
+  margin-bottom: 2rem;
+  position: relative;
+  animation: levitar 5s ease-in-out infinite;
+}
+
+@keyframes levitar {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%       { transform: translateY(-12px) rotate(1deg); }
+}
+
+// Título principal
+.c-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3.5rem, 12vw, 7rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.6rem;
+  position: relative;
+}
+
+// Subtítulo "para ..."
+.c-for {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.3rem, 4vw, 2.2rem);
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 4rem;
+  position: relative;
+
+  .c-name {
+    color: rgba(255, 255, 255, 0.85);
+    font-style: normal;
+  }
+}
+
+// Línea decorativa
+.c-line {
+  width: 60px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.25);
+  margin: 0 auto 4rem;
+}
+
+// Botón scroll
+.c-scroll {
+  font-family: 'Space Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.3);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+
+  &:hover { color: rgba(255, 255, 255, 0.7); }
+
+  svg { animation: bajar 2s ease-in-out infinite; }
+}
+
+@keyframes bajar {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}

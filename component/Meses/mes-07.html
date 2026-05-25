@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mes 01 · Cartas para ti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+
+  <!-- SCSS compilado por Live Sass Compiler -->
+  <link rel="stylesheet" href="../global/global.css"/>
+  <link rel="stylesheet" href="../global/carta.css"/>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="../inicio/inicio.html" class="nav-brand">← Cartas para ti</a>
+  <ul class="nav-months">
+    <li><a href="mes-01.html" class="active">Primer mes</a></li>
+    <li><a href="mes-02.html">Segundo mes</a></li>
+    <li><a href="mes-03.html">Tercer mes</a></li>
+    <!-- Agrega aquí los meses nuevos -->
+  </ul>
+</nav>
+
+<!-- ═══ CARTA ═══ -->
+<main>
+  <article class="carta visible" id="mes-7">
+
+    <p class="mes-numero">07</p>
+    <p class="mes-label">Septimo mes juntos · Mayo 2026</p>
+    <h2 class="mes-titulo" >El septimo mesesito <em>— para Ivana</em></h2>
+
+
+    <div class="carta-inner">
+      <div>
+        <div class="carta-texto">
+
+          <!-- ✏️ ESCRIBE TU CARTA AQUÍ -->
+          <p>Hola mi amor, otro mesesito que llevamos juntos, perdon
+             si has sentido que he dejado de ser detallista, la verdad es que he estado
+              pasando por muchas cositas y eso me ha tenido muy elevado, en verdad me entristece 
+              un poco el echo de poner darte todo eso que te mereces y que me muero de
+             ganas de que lo tengas, pero bueno se que pronto con ayuda de Dios podre hacerlo.</p>
+
+          <p>Feliz Septimo mes vida mia, quise hacer esta paginita para ti donde ire 
+            anotando cada mes y ya no te enviare un mensaje de Whatsapp sino que cada 24 
+            se abrira una seccion nueva con el mensajito de ese mes, te amo mucho y gracias
+             por ser mi lucecita en este tunel tan oscuro por el que estoy pasando,
+             en verdad gracias mi amor, vamos por muchos mas meses juntoss, te amo mushote.</p>
+
+          <p>Gracias por este Septimo mes tan maravilloso mi vida.</p>
+
+        </div>
+
+        <div class="firma">
+          <span class="firma-fecha">Con amor · Mayo 2026</span>
+          <span class="firma-nombre" id="firma-nombre"></span>
+        </div>
+      </div>
+
+      <!-- Snoopy lateral — el JS inyecta el correcto -->
+      <div class="snoopy-col">
+        <div class="snoopy-stamp" id="snoopy-stamp"></div>
+        <span class="snoopy-note">mes 07</span>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- Navegación entre cartas -->
+  <div style="display:flex;justify-content:space-between;padding:3rem 0;border-top:1px solid var(--light);margin-top:1rem;">
+    <a href="mes-06.html" style="color:var(--light);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-decoration:none;">← mes anterior</a>
+    <a href="mes-07.html" style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);text-decoration:none;">Proximamente..→</a>
+  </div>
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>escrito con amor · mes a mes<br/>para siempre</p>
+</footer>
+
+<button id="btn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="../global/snopyy.js"></script>
+<script>
+  // Inyecta el Snoopy del mes 1 (índice 0)
+  document.getElementById('snoopy-stamp').innerHTML = window.SNOOPYS[0];
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('btn-top').classList.toggle('show', window.scrollY > 300);
+  });
+</script>
+
+<script src="../js/global.js"></script>
+<script src="../global/snoopy.js"></script>
+<script>
+  document.getElementById("firma-nombre").textContent = FIRMA;
+</script>
+<script>
+  document.getElementById("nombre").textContent = NOMBRE;
+</script>
+
+</body>
+</html>

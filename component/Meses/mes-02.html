@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mes 01 · Cartas para ti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+
+  <!-- SCSS compilado por Live Sass Compiler -->
+  <link rel="stylesheet" href="../global/global.css"/>
+  <link rel="stylesheet" href="../global/carta.css"/>
+</head>
+<body>
+
+<!-- ═══ NAV ═══ -->
+<nav>
+  <a href="../inicio/inicio.html" class="nav-brand">← Cartas para ti</a>
+  <ul class="nav-months">
+    <li><a href="mes-01.html" class="active">Primer mes</a></li>
+    <li><a href="mes-02.html">Segundo mes</a></li>
+    <li><a href="mes-03.html">Tercer mes</a></li>
+    <!-- Agrega aquí los meses nuevos -->
+  </ul>
+</nav>
+
+<!-- ═══ CARTA ═══ -->
+<main>
+  <article class="carta visible" id="mes-2">
+
+    <p class="mes-numero">02</p>
+    <p class="mes-label">Segundo mes juntos · Diciembre 2025</p>
+    <h2 class="mes-titulo" >El segundo <em>— para Ivana</em></h2>
+
+
+    <div class="carta-inner">
+      <div>
+        <div class="carta-texto">
+
+          <!-- ✏️ ESCRIBE TU CARTA AQUÍ -->
+          <p>Llevamos ya 2 meses juntos y cada día me doy cuenta de lo afortunado que soy, las cicunstancias han sido dificiles pero cada dia me enamoro mas.</p>
+
+          <p>Amor de mi vida muchas gracias por estar conmigo, ya llevamos 2 meses, me parece maravilloso, ya estamos tambien a nada de año nuevo y lo pasaremos juntos.</p>
+
+          <p>Gracias por este segundo mes tan maravilloso.</p>
+
+        </div>
+
+        <div class="firma">
+          <span class="firma-fecha">Con amor · Diciembre 2025</span>
+          <span class="firma-nombre" id="firma-nombre"></span>
+        </div>
+      </div>
+
+      <!-- Snoopy lateral — el JS inyecta el correcto -->
+      <div class="snoopy-col">
+        <div class="snoopy-stamp" id="snoopy-stamp"></div>
+        <span class="snoopy-note">mes 02</span>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- Navegación entre cartas -->
+  <div style="display:flex;justify-content:space-between;padding:3rem 0;border-top:1px solid var(--light);margin-top:1rem;">
+    <a href="mes-01.html" style="color:var(--light);font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-decoration:none;">← mes anterior</a>
+    <a href="mes-03.html" style="font-family:'Space Mono',monospace;font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);text-decoration:none;">Tercer mes →</a>
+  </div>
+</main>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  <p>escrito con amor · mes a mes<br/>para siempre</p>
+</footer>
+
+<button id="btn-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="../global/snopyy.js"></script>
+<script>
+  // Inyecta el Snoopy del mes 1 (índice 0)
+  document.getElementById('snoopy-stamp').innerHTML = window.SNOOPYS[0];
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('btn-top').classList.toggle('show', window.scrollY > 300);
+  });
+</script>
+
+<script src="../js/global.js"></script>
+<script src="../global/snoopy.js"></script>
+<script>
+  document.getElementById("firma-nombre").textContent = FIRMA;
+</script>
+<script>
+  document.getElementById("nombre").textContent = NOMBRE;
+</script>
+
+</body>
+</html>
